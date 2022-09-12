@@ -40,9 +40,9 @@ jobs:
       
       
       
-    - name: Upload apks
+    - name: Upload files
       uses: actions/upload-artifact@v3
       with:
-        name: apks
-        path: D:\a\Final_Code_CPP\Final_Code_CPP\x64\Release\Final_Code.exe
+        name: release
+        path: D:\a\Final_Code_CPP\Final_Code_CPP\x64\Release\
 
