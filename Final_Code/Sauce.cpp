@@ -1,4 +1,5 @@
 #include<iostream>
+#include <stdlib.h>
 #include <time.h> 
 
 using namespace std;
@@ -8,10 +9,11 @@ int Gmaxnum;
 int status;
 
 void init() {
-	//srand((unsigned int)time(0));
+	
 	double min = 1;
 	double max = 100;
 	Fnum = (max - min) * rand() / (RAND_MAX + 1.0) + min;
+	//Fnum = random(1,100)
 	Gminnum = min;
 	Gmaxnum = max;
 	
@@ -37,19 +39,21 @@ void guess(int Gnum) { // 1 = correct,2 = smaller than ans, 3 = bigger than ans
 }
 
 int main() {
+	unsigned seed = time(NULL);
+	srand(seed);
 	int Unum;
 	char agin = 'n';
 	init();
 	
 enter:
 	//cout << Fnum; //for debugging
-	cout << "½Ð¿é¤J¤@­Ó¼Æ¦r("<<Gminnum<<"-"<<Gmaxnum<<"):";
+	cout << "è«‹è¼¸å…¥ä¸€å€‹æ•¸å­—("<<Gminnum<<"-"<<Gmaxnum<<"):";
 	cin >> Unum;
 	guess(Unum);
 	switch (status) {
 	case 1:
-		cout <<endl<< "§AÄ¹¤F!!111" << endl;
-		cout << "¦Aª±¤@¦¸¶Ü?(y/n):";
+		cout <<endl<< "ä½ è´äº†!!111" << endl;
+		cout << "å†çŽ©ä¸€æ¬¡å—Ž?(y/n):";
 		cin >> agin;
 		//agin = cin.get();
 
