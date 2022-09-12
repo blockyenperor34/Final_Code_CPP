@@ -55,6 +55,8 @@ enter:
 
 		if (agin == 'y') {
 			init();
+			system("CLS");
+			
 			goto enter;
 		}
 		else {
